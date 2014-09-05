@@ -14,7 +14,7 @@ angular.module('jsonApp')
         $scope.expense.lines = [{}];
 
         $scope.submit = function() {
-            $http.post('something/tobe/done', $scope.expense);
+            $http.post('/bonita/rest/tasks/poc/json', $scope.expense);
         }
 
         $scope.add = function() {
