@@ -3,14 +3,23 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="http://purecss.io/combo/1.17.4?/css/main-grid.css&amp;/css/main.css&amp;/css/grids.css&amp;/css/rainbow/baby-blue.css">
+
+    <style>
+        .content {
+            max-width: 1024px;
+        }
+    </style>
 </head>
 <body>
 
+<div class="content">
 <h1>Form</h1>
 
 <p>
 
-<form action="something/tobe/done" method="post" enctype="multipart/form-data">
+<form class="pure-form" action="something/tobe/done" method="post" enctype="multipart/form-data">
 
     <p>
         <label for="employee.name">Employee name :</label>
@@ -19,31 +28,27 @@
 
     <fieldset>
         <legend>Expense 1</legend>
-        <label for="line1.type">Type :</label>
-        <input id="line1.type" type="text" name="line1.type">
+        <input id="line1.type" type="text" name="line1.type" placeholder="Type">
 
-        <label for="line1.amount">Amount :</label>
-        <input id="line1.amount" type="text" name="line1.amount"> &euro;
+        <input id="line1.amount" type="text" name="line1.amount" placeholder="Amount"> &euro;
 
-        <label for="line1.justif">Filename:</label>
+        <label style="margin-left: 50px" for="line1.justif">Justification :</label>
         <input type="file" name="line1.justif" id="line1.justif">
     </fieldset>
 
     <fieldset>
         <legend>Expense 2</legend>
-        <label for="line2.type">Type :</label>
-        <input id="line2.type" type="text" name="line2.type">
+        <input id="line2.type" type="text" name="line2.type" placeholder="Type">
 
-        <label for="line2.amount">Amount :</label>
-        <input id="line2.amount" type="text" name="line2.amount"> &euro;
+        <input id="line2.amount" type="text" name="line2.amount" placeholder="Amount"> &euro;
 
-        <label for="line2.justif">Filename:</label>
+        <label style="margin-left: 50px" for="line2.justif">Justification :</label>
         <input type="file" name="line2.justif" id="line2.justif">
     </fieldset>
 
-    <input type="submit" name="submit" value="Submit">
+    <input class="pure-button pure-button-primary" type="submit" name="submit" value="Submit">
 </form>
 </p>
-
+</div>
 </body>
 </html>
