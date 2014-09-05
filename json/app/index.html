@@ -5,10 +5,24 @@
     <title></title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <link rel="stylesheet" href="http://purecss.io/combo/1.17.4?/css/main-grid.css&amp;/css/main.css&amp;/css/grids.css&amp;/css/rainbow/baby-blue.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         .content {
             max-width: 1024px;
         }
+
+        .button-success {
+            background: rgb(28, 184, 65);
+        }
+
+        .button-error {
+            background: rgb(202, 60, 60);
+        }
+
+        .button-small {
+            font-size: 70%;
+        }
+
     </style>
 </head>
 <body ng-app="jsonApp">
@@ -22,8 +36,7 @@
     <form ng-controller="MainCtrl" class="pure-form">
 
         <p>
-            <label for="expense.owner">Owner :</label>
-            <input ng-model="expense.owner" id="expense.owner" type="text" name="expense.owner">
+            <input ng-model="expense.owner" id="expense.owner" type="text" name="expense.owner" placeholder="Owner">
         </p>
 
         <fieldset ng-repeat="line in expense.lines">
@@ -34,11 +47,19 @@
 
             <label style="margin-left: 50px" for="line.justif">Justification :</label>
             <input fileread="line.justif" type="file" name="line.justif" id="line.justif">
+
         </fieldset>
 
+    <div style="float: right">
+        <button ng-click="add()" class="button-success button-small pure-button"><i class="fa fa-plus"> Add</i></button>
+        <button ng-click="remove()" ng-class="{'pure-button-disabled': !canRemove()}" class="button-error button-small pure-button"><i class="fa fa-minus"> Remove</i></button>
+    </div>
+    <p>
         <input ng-click="submit()" class="pure-button pure-button-primary" type="submit" name="submit" value="Submit">
+    </p>
     </form>
     </p>
+
 </div>
 
 

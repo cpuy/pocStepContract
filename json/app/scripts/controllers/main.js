@@ -11,11 +11,26 @@ angular.module('jsonApp')
   .controller('MainCtrl', function ($scope, $http) {
 
         $scope.expense = {};
-        $scope.expense.lines = [{}, {}];
+        $scope.expense.lines = [{}];
 
         $scope.submit = function() {
             $http.post('something/tobe/done', $scope.expense);
         }
+
+        $scope.add = function() {
+            $scope.expense.lines.push({});
+        }
+
+        $scope.remove = function() {
+            if ($scope.canRemove()) {
+                $scope.expense.lines.pop();
+            }
+        }
+
+        $scope.canRemove = function() {
+            return $scope.expense.lines.length > 1;
+        }
+
   })
     .directive("fileread", [function () {
         return {
