@@ -1,4 +1,4 @@
-// Generated on 2014-09-05 using generator-angular 0.9.7
+    // Generated on 2014-09-05 using generator-angular 0.9.7
 'use strict';
 
 // # Globbing
@@ -71,6 +71,11 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
+        proxies: [{
+            context: '/bonita/rest', // the context of the data service
+            host: 'localhost', // wherever the data service is running
+            port: 8080 // the port that the data service is running on
+        }],
       livereload: {
         options: {
           open: true,
@@ -81,6 +86,7 @@ module.exports = function (grunt) {
                 '/bower_components',
                 connect.static('./bower_components')
               ),
+                require('grunt-connect-proxy/lib/utils').proxyRequest,
               connect.static(appConfig.app)
             ];
           }
@@ -363,7 +369,8 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'autoprefixer',
-      'connect:livereload',
+        'configureProxies:server',
+        'connect:livereload',
       'watch'
     ]);
   });
