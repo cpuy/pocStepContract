@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h1>Form</h1>
+
+<p>
+
+<form action="something/tobe/done" method="post" enctype="multipart/form-data">
+
+    <p>
+        <label for="employee.name">Employee name :</label>
+        <input id="employee.name" type="text" name="employee.name">
+    </p>
+
+    <fieldset>
+        <legend>Expense 1</legend>
+        <label for="line1.type">Type :</label>
+        <input id="line1.type" type="text" name="line1.type">
+
+        <label for="line1.amount">Amount :</label>
+        <input id="line1.amount" type="text" name="line1.amount"> &euro;
+
+        <label for="line1.justif">Filename:</label>
+        <input type="file" name="line1.justif" id="line1.justif">
+    </fieldset>
+
+    <fieldset>
+        <legend>Expense 2</legend>
+        <label for="line2.type">Type :</label>
+        <input id="line2.type" type="text" name="line2.type">
+
+        <label for="line2.amount">Amount :</label>
+        <input id="line2.amount" type="text" name="line2.amount"> &euro;
+
+        <label for="line2.justif">Filename:</label>
+        <input type="file" name="line2.justif" id="line2.justif">
+    </fieldset>
+
+    <input type="submit" name="submit" value="Submit">
+</form>
+</p>
+
+</body>
+</html>
