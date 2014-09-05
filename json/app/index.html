@@ -19,34 +19,24 @@
 
     <p>
 
-    <form class="pure-form" action="something/tobe/done" method="post" enctype="multipart/form-data">
+    <form ng-controller="MainCtrl" class="pure-form">
 
         <p>
             <label for="employee.name">Employee name :</label>
             <input id="employee.name" type="text" name="employee.name">
         </p>
 
-        <fieldset>
-            <legend>Expense 1</legend>
-            <input id="line1.type" type="text" name="line1.type" placeholder="Type">
+        <fieldset ng-repeat="line in lines">
+            <legend>Expense {{$index + 1}}</legend>
+            <input ng-model="line.type" id="line.type" type="text" name="line.type" placeholder="Type">
 
-            <input id="line1.amount" type="text" name="line1.amount" placeholder="Amount"> &euro;
+            <input ng-model="line.amount" id="line.amount" type="text" name="line.amount" placeholder="Amount"> &euro;
 
-            <label style="margin-left: 50px" for="line1.justif">Justification :</label>
-            <input type="file" name="line1.justif" id="line1.justif">
+            <label style="margin-left: 50px" for="line.justif">Justification :</label>
+            <input fileread="line.justif" type="file" name="line.justif" id="line.justif">
         </fieldset>
 
-        <fieldset>
-            <legend>Expense 2</legend>
-            <input id="line2.type" type="text" name="line2.type" placeholder="Type">
-
-            <input id="line2.amount" type="text" name="line2.amount" placeholder="Amount"> &euro;
-
-            <label style="margin-left: 50px" for="line2.justif">Justification :</label>
-            <input type="file" name="line2.justif" id="line2.justif">
-        </fieldset>
-
-        <input class="pure-button pure-button-primary" type="submit" name="submit" value="Submit">
+        <input ng-click="submit()" class="pure-button pure-button-primary" type="submit" name="submit" value="Submit">
     </form>
     </p>
 </div>
