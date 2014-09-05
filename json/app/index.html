@@ -22,11 +22,11 @@
     <form ng-controller="MainCtrl" class="pure-form">
 
         <p>
-            <label for="employee.name">Employee name :</label>
-            <input id="employee.name" type="text" name="employee.name">
+            <label for="expense.owner">Owner :</label>
+            <input ng-model="expense.owner" id="expense.owner" type="text" name="expense.owner">
         </p>
 
-        <fieldset ng-repeat="line in lines">
+        <fieldset ng-repeat="line in expense.lines">
             <legend>Expense {{$index + 1}}</legend>
             <input ng-model="line.type" id="line.type" type="text" name="line.type" placeholder="Type">
 

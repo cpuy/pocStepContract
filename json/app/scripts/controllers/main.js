@@ -10,10 +10,11 @@
 angular.module('jsonApp')
   .controller('MainCtrl', function ($scope, $http) {
 
-        $scope.lines = [{}, {}];
+        $scope.expense = {};
+        $scope.expense.lines = [{}, {}];
 
         $scope.submit = function() {
-            $http.post('something/tobe/done', $scope.lines);
+            $http.post('something/tobe/done', $scope.expense);
         }
   })
     .directive("fileread", [function () {
