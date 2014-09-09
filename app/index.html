@@ -1,61 +1,13 @@
-<!doctype html>
-<html class="no-js">
-<head>
-    <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-    <link rel="stylesheet" href="http://purecss.io/combo/1.17.4?/css/main-grid.css&amp;/css/main.css&amp;/css/grids.css&amp;/css/rainbow/baby-blue.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="./styles/main.css" rel="stylesheet">
 </head>
-<body ng-app="jsonApp">
+<body>
 
-
-<div class="content">
-    <h1>Expense json</h1>
-
-    <p>
-
-    <form ng-controller="MainCtrl" class="pure-form">
-
-        <p>
-            <input ng-model="expense.owner" id="expense.owner" type="text" name="expense.owner" placeholder="Owner">
-        </p>
-
-        <fieldset ng-repeat="line in expense.lines">
-            <legend>Expense {{$index + 1}}</legend>
-            <input ng-model="line.type" id="line.type" type="text" name="line.type" placeholder="Type">
-
-            <input ng-model="line.amount" id="line.amount" type="text" name="line.amount" placeholder="Amount"> &euro;
-
-            <label style="margin-left: 50px" for="line.justif">Justification :</label>
-            <input fileread="line.justif" type="file" name="line.justif" id="line.justif">
-
-        </fieldset>
-
-    <div style="float: right">
-        <button ng-click="add()" class="button-success button-small pure-button"><i class="fa fa-plus"> Add</i></button>
-        <button ng-click="remove()" ng-class="{'pure-button-disabled': !canRemove()}" class="button-error button-small pure-button"><i class="fa fa-minus"> Remove</i></button>
-    </div>
-    <p>
-        <input ng-click="submit()" class="pure-button pure-button-primary" type="submit" name="submit" value="Submit">
-    </p>
-    </form>
-    </p>
-
-</div>
-
-
-<!-- build:js(.) scripts/vendor.js -->
-<!-- bower:js -->
-<script src="bower_components/es5-shim/es5-shim.js"></script>
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/json3/lib/json3.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
-
-<!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="scripts/main.js"></script>
-<!-- endbuild -->
+    <h1>Step contract <small>complex type POC</small></h1>
+    <div><a href="formdata.html">Using multipart/form-data</a></div>
+    <div><a href="json.html">Using json</a></div>
 </body>
 </html>
