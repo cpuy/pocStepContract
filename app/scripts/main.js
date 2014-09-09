@@ -1,13 +1,6 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name jsonApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the jsonApp
- */
-angular.module('jsonApp')
+angular.module('jsonApp', [])
   .controller('MainCtrl', function ($scope, $http) {
 
         $scope.expense = {};
