@@ -25,7 +25,7 @@ angular.module('jsonApp', [])
         }
 
   })
-    .directive("fileread", [function () {
+    .directive("fileread", function ($log) {
         return {
             scope: {
                 fileread: "="
@@ -33,13 +33,22 @@ angular.module('jsonApp', [])
             link: function (scope, element, attributes) {
                 element.bind("change", function (changeEvent) {
                     var reader = new FileReader();
+
                     reader.onload = function (loadEvent) {
+                        $log.info('finished loading');
                         scope.$apply(function () {
                             scope.fileread = loadEvent.target.result;
                         });
+                    }
+
+                    reader.onloadstart = function() {
+                        $log.info('started loading ' + changeEvent.target.files[0].size / 1000 + " kB");
+                    }
+                    reader.onerror = function() {
+                        $log.info('error while loading');
                     }
                     reader.readAsDataURL(changeEvent.target.files[0]);
                 });
             }
         }
-    }]);
+    });
