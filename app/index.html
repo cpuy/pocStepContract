@@ -6,8 +6,26 @@
 </head>
 <body>
 
-    <h1>Step contract <small>complex type POC</small></h1>
+<h1>Step contract
+    <small>complex type POC</small>
+</h1>
+<div>
+    <h2>Attachments</h2>
+    <p>Mainly two solutions</p>
+    <ol>
+        <li>Base64 encode the file, at the expense of increasing the data size by around 33%.</li>
+        <li>Send the file first in a multipart/form-data POST, and return an ID to the client. The client then sends the metadata with the ID, and the server re-associates the file and the metadata</li>
+    </ol>
+    <p>Bonita Document API.</p>
+    <ul>
+        <li>Document is attached to a case ???</li>
+        <li>FileUpload servlet return path on server !!!</li>
+    </ul>
+</div>
+<div>
+    <h2>Examples</h2>
     <div><a href="formdata.html">Using multipart/form-data</a></div>
     <div><a href="json.html">Using json</a></div>
+</div>
 </body>
 </html>
